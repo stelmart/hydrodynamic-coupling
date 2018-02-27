@@ -1,0 +1,739 @@
+Binary file main.o matches
+wsgen.py:fname += 'ws-'+str(l)+'-'+str(nx*ny)+'-'+str(h)+'.sim'
+wsgen.py:                temp = np.random.rand(3) - np.array([.5,.5,.3])
+main.cpp:	//for(int i=0; i< poly->Length; i++){
+main.cpp:	//	cout << poly->Loc[i];
+main.cpp:	//outfile.write((const char*)&poly->Length, sizeof(poly->Length));
+main.cpp:	//outfile.write((const char*)&poly->Loc[0], poly->Length * sizeof(vect_d));
+main.cpp:	//ifile.read((char*)&poly2->Loc[0], size* sizeof(vect_d));
+main.cpp:	//for(int i=0; i< poly2->Length; i++){
+main.cpp:	//	cout << poly2->Loc[i];
+main.cpp:		return -1;
+main.cpp://	std::tr1::uniform_real<double> dist(-.5,.5);
+main.cpp:				sim->addPolymer(2*j,2*i,1,20,100*i+j);
+main.cpp:	sim->initSys();
+main.cpp:	sim->sol->SetStepSize(.003);
+main.cpp:	cout << "Going for " << numsteps << " steps(" << start_step << "-"<<start_step+numsteps<<")"<< endl;
+main.cpp:		sim->takeSteps(200);
+main.cpp:		//outputPolys(sim->sys, output);
+main.cpp:		savePolys(sim->sys, saveSim.add_system());
+main.cpp:		saveYolk(sim->yolk, saveSim.add_yolk());
+main.cpp:			return -1;
+main.cpp:	//output.seekp(-1,ios::cur);
+main.cpp:		for(int j=0; j< sys[i]->Length; j++){
+main.cpp:			file << sys[i]->Loc[j];
+main.cpp:		file.seekp(-1,ios::cur);
+main.cpp:	file.seekp(-1,ios::cur);
+main.cpp:		polysim::SPolymer * poly = save->add_poly();
+main.cpp:		for(int j=0; j< sys[i]->Length; j++){
+main.cpp:			poly->add_x(sys[i]->Loc[j].xcomp() );
+main.cpp:			poly->add_y(sys[i]->Loc[j].ycomp() );
+main.cpp:			poly->add_z(sys[i]->Loc[j].zcomp() );
+main.cpp:	for( int  i=0; i<yolk->Length ; i++){
+main.cpp:		syolk->add_x(yolk->Loc[i].xcomp());
+main.cpp:		syolk->add_y(yolk->Loc[i].ycomp());
+main.cpp:		syolk->add_z(yolk->Loc[i].zcomp());
+main.cpp:	const polysim::SSystem savesys = save.system(save.system_size()-1);
+main.cpp:	sim->sk = save.settings().sk();
+main.cpp:	sim->pk = save.settings().pk();
+main.cpp:	sim->stiffk = save.settings().stiffk();
+main.cpp:	sim->oseenk = save.settings().oseenk();
+main.cpp:	sim->shiftk = save.settings().shiftk();
+main.cpp:	sim->basek = save.settings().basek();
+main.cpp:	sim->numpin = save.settings().numpin();
+main.cpp:			poly->pushMonomer(savepoly.x(j),savepoly.y(j),savepoly.z(j));
+main.cpp:		sim->addPolymer(poly);
+main.cpp:	const polysim::SPolymer saveyolk = save.yolk(save.yolk_size()-1);
+main.cpp:	sim->yolk = new Polymer(0);
+main.cpp:		sim->yolk->pushMonomer(saveyolk.x(i),saveyolk.y(i),saveyolk.z(i));
+1d_corr.py:max_x = -sys.maxint - 1
+1d_corr.py:    scaled_time = frame_num-t_start
+1d_corr.py:            x = int(poly.x[-1]/ds)
+1d_corr.py:nx = max_x - min_x + 1
+1d_corr.py:    x = pos_list[i][1] - min_x
+1d_corr.py:#Zero-pad density function
+1d_corr.py:savename =  name[:-4]+'_'+str(ds)
+Binary file Modifier.o matches
+Binary file polysim.pb.o matches
+display.py:		       cyls[pol_num][i].axis = r_old-r
+fft_correlation.py:max_x = -sys.maxint - 1
+fft_correlation.py:    scaled_time = frame_num-t_start
+fft_correlation.py:            x = int(poly.x[-1]/ds)
+fft_correlation.py:            y = int(poly.y[-1]/ds)
+fft_correlation.py:nx = max_x - min_x + 1
+fft_correlation.py:ny = max_y - min_y + 1
+fft_correlation.py:    x = pos_list[i][1] - min_x
+fft_correlation.py:    y = pos_list[i][2] - min_y
+fft_correlation.py:#dens -= dens_ave
+fft_correlation.py:#Zero-pad density function
+fft_correlation.py:savename =  name[:-4]+'_'+str(ds)
+Solver.cpp:	yolk1 = new Polymer(yolk->Length);
+Solver.cpp:	yolk2 = new Polymer(yolk->Length);
+Solver.cpp:	yolk3 = new Polymer(yolk->Length);
+Solver.cpp:		sys1.push_back(new Polymer(sys[i]->Length));
+Solver.cpp:		sys2.push_back(new Polymer(sys[i]->Length));
+Solver.cpp:		sys3.push_back(new Polymer(sys[i]->Length));
+Solver.cpp:			for(int j=0;j<sys0[i]->Length;j++){
+Solver.cpp:				sys0[i]->Vel[j].set(0,0,0);
+Solver.cpp:				sys1[i]->Vel[j].set(0,0,0);
+Solver.cpp:				sys2[i]->Vel[j].set(0,0,0);
+Solver.cpp:				sys3[i]->Vel[j].set(0,0,0);
+Solver.cpp:		for(int j=0; j<yolk0->Length; j++){
+Solver.cpp:			yolk0->Vel[j].set(0,0,0);
+Solver.cpp:			yolk1->Vel[j].set(0,0,0);
+Solver.cpp:			yolk2->Vel[j].set(0,0,0);
+Solver.cpp:			yolk3->Vel[j].set(0,0,0);
+Solver.cpp:			mods[i]->Act(sys0,yolk0);
+Solver.cpp:			for(int j=0;j<sys0[i]->Length;j++){
+Solver.cpp:				sys1[i]->Loc[j] = sys0[i]->Loc[j] + sys0[i]->Vel[j]*h2;
+Solver.cpp:		for(int i=0; i<yolk0->Length; i++){
+Solver.cpp:			yolk1->Loc[i] = yolk0->Loc[i] + yolk0->Vel[i]*h2;
+Solver.cpp:			mods[i]->Act(sys1,yolk1);
+Solver.cpp:			for(int j=0;j<sys1[i]->Length;j++){
+Solver.cpp:				sys2[i]->Loc[j] = sys0[i]->Loc[j] + sys1[i]->Vel[j]*h2;
+Solver.cpp:		for(int i=0; i<yolk0->Length; i++){
+Solver.cpp:			yolk2->Loc[i] = yolk0->Loc[i] + yolk1->Vel[i]*h2;
+Solver.cpp:			mods[i]->Act(sys2,yolk2);
+Solver.cpp:			for(int j=0;j<sys2[i]->Length;j++){
+Solver.cpp:				sys3[i]->Loc[j] = sys0[i]->Loc[j] + sys2[i]->Vel[j]*h;
+Solver.cpp:		for(int i=0; i<yolk0->Length; i++){
+Solver.cpp:			yolk3->Loc[i] = yolk0->Loc[i] + yolk2->Vel[i]*h;
+Solver.cpp:			mods[i]->Act(sys3,yolk3);
+Solver.cpp:			for(int j=0;j<sys3[i]->Length;j++){
+Solver.cpp:				sys0[i]->Loc[j] += (sys0[i]->Vel[j] + sys3[i]->Vel[j] + (sys1[i]->Vel[j] + sys2[i]->Vel[j])*2.0)*h6;
+Solver.cpp:		for(unsigned i=0;i<yolk0->Length;i++){
+Solver.cpp:			yolk0->Loc[i] += (yolk0->Vel[i] + yolk3->Vel[i] + (yolk1->Vel[i] + yolk2->Vel[i])*2.0)*h6;
+fft_correlation.py~:max_x = -sys.maxint - 1
+fft_correlation.py~:    scaled_time = frame_num-t_start
+fft_correlation.py~:            x = int(poly.x[-1]/ds)
+fft_correlation.py~:            y = int(poly.y[-1]/ds)
+fft_correlation.py~:nx = max_x - min_x + 1
+fft_correlation.py~:ny = max_y - min_y + 1
+fft_correlation.py~:    x = pos_list[i][1] - min_x
+fft_correlation.py~:    y = pos_list[i][2] - min_y
+fft_correlation.py~:#dens -= dens_ave
+fft_correlation.py~:#Zero-pad density function
+fft_correlation.py~:savename =  name[:-4]+'_'+str(ds)
+Binary file Solver.o matches
+Vect3d.h://#include <g++-3/std/cpp_type_traits.h>
+Vect3d.h:      template<typename U> Vect3d<T>& operator-=(const Vect3d<U>&);
+Vect3d.h:   return (SQR(x-__r.xcomp()) + SQR(y-__r.ycomp()) + SQR(z-__r.zcomp()));
+Vect3d.h:Vect3d<T>::operator-=(const Vect3d<U>& __r)
+Vect3d.h:   x -= __r.xcomp();
+Vect3d.h:   y -= __r.ycomp();
+Vect3d.h:   z -= __r.zcomp();
+Vect3d.h:   x = y*__r.zcomp() - z* __r.ycomp();
+Vect3d.h:   y = z*__r.xcomp() - x* __r.zcomp();
+Vect3d.h:   z =  x*__r.ycomp() - y* __r.xcomp();
+Vect3d.h:operator-(const Vect3d<T>& __x, const Vect3d<T>& __y)
+Vect3d.h:{ return Vect3d<T> (__x) -= __y; }
+Vect3d.h:      (u.ycomp()*v.zcomp()- u.zcomp()*v.ycomp(), 
+Vect3d.h:       u.zcomp()*v.xcomp()- u.xcomp()*v.zcomp(), 
+Vect3d.h:       u.xcomp()*v.ycomp()- u.ycomp()*v.xcomp()); 
+polysim.pb.cc:    ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
+polysim.pb.cc:  SPolymer_descriptor_ = file->message_type(0);
+polysim.pb.cc:      -1,
+polysim.pb.cc:  SSystem_descriptor_ = file->message_type(1);
+polysim.pb.cc:      -1,
+polysim.pb.cc:  SSim_descriptor_ = file->message_type(2);
+polysim.pb.cc:      -1,
+polysim.pb.cc:  Settings_descriptor_ = file->message_type(3);
+polysim.pb.cc:      -1,
+polysim.pb.cc:  SPolymer::default_instance_->InitAsDefaultInstance();
+polysim.pb.cc:  SSystem::default_instance_->InitAsDefaultInstance();
+polysim.pb.cc:  SSim::default_instance_->InitAsDefaultInstance();
+polysim.pb.cc:  Settings::default_instance_->InitAsDefaultInstance();
+polysim.pb.cc:  mutable_unknown_fields()->Clear();
+polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+polysim.pb.cc:                 1, 9, input, this->mutable_x())));
+polysim.pb.cc:                 input, this->mutable_x())));
+polysim.pb.cc:        if (input->ExpectTag(9)) goto parse_x;
+polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_y;
+polysim.pb.cc:                 1, 17, input, this->mutable_y())));
+polysim.pb.cc:                 input, this->mutable_y())));
+polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_y;
+polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_z;
+polysim.pb.cc:                 1, 25, input, this->mutable_z())));
+polysim.pb.cc:                 input, this->mutable_z())));
+polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_z;
+polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+polysim.pb.cc:  for (int i = 0; i < this->x_size(); i++) {
+polysim.pb.cc:      1, this->x(i), output);
+polysim.pb.cc:  for (int i = 0; i < this->y_size(); i++) {
+polysim.pb.cc:      2, this->y(i), output);
+polysim.pb.cc:  for (int i = 0; i < this->z_size(); i++) {
+polysim.pb.cc:      3, this->z(i), output);
+polysim.pb.cc:  for (int i = 0; i < this->x_size(); i++) {
+polysim.pb.cc:      WriteDoubleToArray(1, this->x(i), target);
+polysim.pb.cc:  for (int i = 0; i < this->y_size(); i++) {
+polysim.pb.cc:      WriteDoubleToArray(2, this->y(i), target);
+polysim.pb.cc:  for (int i = 0; i < this->z_size(); i++) {
+polysim.pb.cc:      WriteDoubleToArray(3, this->z(i), target);
+polysim.pb.cc:    data_size = 8 * this->x_size();
+polysim.pb.cc:    total_size += 1 * this->x_size() + data_size;
+polysim.pb.cc:    data_size = 8 * this->y_size();
+polysim.pb.cc:    total_size += 1 * this->y_size() + data_size;
+polysim.pb.cc:    data_size = 8 * this->z_size();
+polysim.pb.cc:    total_size += 1 * this->z_size() + data_size;
+polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+polysim.pb.cc:    x_.Swap(&other->x_);
+polysim.pb.cc:    y_.Swap(&other->y_);
+polysim.pb.cc:    z_.Swap(&other->z_);
+polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+polysim.pb.cc:  mutable_unknown_fields()->Clear();
+polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+polysim.pb.cc:        if (input->ExpectTag(10)) goto parse_poly;
+polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+polysim.pb.cc:      1, this->poly(i), output);
+polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+polysim.pb.cc:        1, this->poly(i), target);
+polysim.pb.cc:  total_size += 1 * this->poly_size();
+polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+polysim.pb.cc:        this->poly(i));
+polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+polysim.pb.cc:    poly_.Swap(&other->poly_);
+polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+polysim.pb.cc:    if (settings_ != NULL) settings_->::polysim::Settings::Clear();
+polysim.pb.cc:  mutable_unknown_fields()->Clear();
+polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+polysim.pb.cc:        if (input->ExpectTag(10)) goto parse_system;
+polysim.pb.cc:        if (input->ExpectTag(18)) goto parse_settings;
+polysim.pb.cc:        if (input->ExpectTag(26)) goto parse_yolk;
+polysim.pb.cc:        if (input->ExpectTag(26)) goto parse_yolk;
+polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+polysim.pb.cc:      1, this->system(i), output);
+polysim.pb.cc:      2, this->settings(), output);
+polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+polysim.pb.cc:      3, this->yolk(i), output);
+polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+polysim.pb.cc:        1, this->system(i), target);
+polysim.pb.cc:        2, this->settings(), target);
+polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+polysim.pb.cc:        3, this->yolk(i), target);
+polysim.pb.cc:          this->settings());
+polysim.pb.cc:  total_size += 1 * this->system_size();
+polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+polysim.pb.cc:        this->system(i));
+polysim.pb.cc:  total_size += 1 * this->yolk_size();
+polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+polysim.pb.cc:        this->yolk(i));
+polysim.pb.cc:      mutable_settings()->::polysim::Settings::MergeFrom(from.settings());
+polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+polysim.pb.cc:    if (!this->settings().IsInitialized()) return false;
+polysim.pb.cc:    system_.Swap(&other->system_);
+polysim.pb.cc:    yolk_.Swap(&other->yolk_);
+polysim.pb.cc:    std::swap(settings_, other->settings_);
+polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+polysim.pb.cc:  &reinterpret_cast<Settings*>(16)->f) - \
+polysim.pb.cc:    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+polysim.pb.cc:  mutable_unknown_fields()->Clear();
+polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_pk;
+polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_stiffk;
+polysim.pb.cc:        if (input->ExpectTag(33)) goto parse_shiftk;
+polysim.pb.cc:        if (input->ExpectTag(41)) goto parse_oseenk;
+polysim.pb.cc:        if (input->ExpectTag(49)) goto parse_basek;
+polysim.pb.cc:        if (input->ExpectTag(56)) goto parse_numpin;
+polysim.pb.cc:        if (input->ExpectTag(65)) goto parse_h;
+polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->sk(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->pk(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->stiffk(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->shiftk(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->oseenk(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(6, this->basek(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->numpin(), output);
+polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(8, this->h(), output);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->sk(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->pk(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->stiffk(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->shiftk(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->oseenk(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(6, this->basek(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->numpin(), target);
+polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(8, this->h(), target);
+polysim.pb.cc:          this->numpin());
+polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+polysim.pb.cc:    std::swap(h_, other->h_);
+polysim.pb.cc:    std::swap(sk_, other->sk_);
+polysim.pb.cc:    std::swap(pk_, other->pk_);
+polysim.pb.cc:    std::swap(stiffk_, other->stiffk_);
+polysim.pb.cc:    std::swap(shiftk_, other->shiftk_);
+polysim.pb.cc:    std::swap(oseenk_, other->oseenk_);
+polysim.pb.cc:    std::swap(basek_, other->basek_);
+polysim.pb.cc:    std::swap(numpin_, other->numpin_);
+polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+Binary file Polymer.o matches
+Polymer.cpp://	std::tr1::uniform_real<double> dist(-1.0,1.0);
+Polymer.cpp:		Loc.push_back(Loc[i-1] + temp);
+Binary file polysim matches
+display_ends.py:                i = num_mon - 1
+display_ends.py:		       #cyls[pol_num][i].axis = r_old-r
+#Modifier.cpp#:	this->pk = initpk;
+#Modifier.cpp#:	this->sk = initsk;
+#Modifier.cpp#:	this->stiffk = initstiffk;
+#Modifier.cpp#:	this->linksize = 1.0;
+#Modifier.cpp#:	this->numpin = numpin;
+#Modifier.cpp#:			pins.push_back(sys[i]->Loc[j]);
+#Modifier.cpp#:		for(int j=1; j<sys[i]->Length-1; j++){
+#Modifier.cpp#:			f1 = sys[i]->Loc[j-1] - sys[i]->Loc[j];
+#Modifier.cpp#:			f2 = sys[i]->Loc[j+1] - sys[i]->Loc[j];
+#Modifier.cpp#:			sys[i]->Vel[j] += ((mag1-linksize)*sk/mag1)*f1 + ((mag2-linksize)*sk/mag2)*f2;
+#Modifier.cpp#:		f1 = sys[i]->Loc[1] - sys[i]->Loc[0];
+#Modifier.cpp#:		f2 = sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-1];
+#Modifier.cpp#:		sys[i]->Vel[0] += ((mag1-linksize)*sk/mag1)*f1;
+#Modifier.cpp#:		sys[i]->Vel[sys[i]->Length-1] += ((mag2-linksize)*sk/mag2)*f2;
+#Modifier.cpp#:		for(int j=2; j<sys[i]->Length-2; j++){
+#Modifier.cpp#:			sys[i]->Vel[j] += (sys[i]->Loc[j]*2.0 - sys[i]->Loc[j+2] - sys[i]->Loc[j-2])*stiffk;
+#Modifier.cpp#:		sys[i]->Vel[1] += (sys[i]->Loc[1] - sys[i]->Loc[3])*stiffk;
+#Modifier.cpp#:		sys[i]->Vel[0] += (sys[i]->Loc[0] - sys[i]->Loc[2])*stiffk;
+#Modifier.cpp#:		sys[i]->Vel[sys[i]->Length-2] += (sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-4])*stiffk;
+#Modifier.cpp#:		sys[i]->Vel[sys[i]->Length-1] += (sys[i]->Loc[sys[i]->Length-1] - sys[i]->Loc[sys[i]->Length-3])*stiffk;
+#Modifier.cpp#:			sys[i]->Vel[j] += (pins[i*numpin + j] - sys[i]->Loc[j])*pk;
+#Modifier.cpp#:		//cout << sys[i]->Loc[0]<<endl;
+#Modifier.cpp#:		//sys[i]->Vel[1] += (vect_d(0.0,0.0,1.0) - f1/mag1)*3.0;//sloppily at first
+#Modifier.cpp#:		sys[i]->Vel[1] += -basek*(f1 - vect_d(0.0,0.0,f1.zcomp())); 
+#Modifier.cpp#:		//STEVE: include two more walls at y = -spacing and y = ny * spacing 
+#Modifier.cpp#:		for(int j=1; j<sys[i]->Length; j++){
+#Modifier.cpp#:			if(sys[i]->Loc[j].zcomp() < .5){
+#Modifier.cpp#:				sys[i]->Vel[j] += (-100.0 + 100.0/(sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*16.0))*z_hat;
+#Modifier.cpp#:				if(sys[i]->Loc[j].zcomp() < 0){
+#Modifier.cpp#:					cout<<"warning!!!, wall broken!! " << "index:" << i <<"-"<< j << " "<< sys[i]->Loc[j].zcomp() <<endl;
+#Modifier.cpp#:			if(sys[i]->Loc[j].ycomp() < .5 - sys[i]->Spacing){
+#Modifier.cpp#:				sys[i]->Vel[j] += (-100.0 + 100.0/(sys[i]->Loc[j].ycomp()*sys[i]->Loc[j].ycomp()*sys[i]->Loc[j].ycomp()*sys[i]->Loc[j].ycomp()*16.0))*y_hat;
+#Modifier.cpp#:				if(sys[i]->Loc[j].ycomp() < -sys[i]->Spacing){
+#Modifier.cpp#:					cout<<"warning!!!, wall broken!! " << "index:" << i <<"-"<< j << " "<< sys[i]->Loc[j].zcomp() <<endl;
+#Modifier.cpp#:	this->k = ck;
+#Modifier.cpp#:		for(int j=1; j<sys[i]->Length-1; j++){
+#Modifier.cpp#:			sys[i]->Vel[j] += (sys[i]->Loc[j-1] - sys[i]->Loc[j+1])*k;
+#Modifier.cpp#:		sys[i]->Vel[0] += (sys[i]->Loc[0] - sys[i]->Loc[1])*k;
+#Modifier.cpp#:		sys[i]->Vel[sys[i]->Length-1] += (sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-1])*k;
+#Modifier.cpp#:	this->k = ck;
+#Modifier.cpp#:		tempsys.push_back(new Polymer(csys[i]->Length));
+#Modifier.cpp#:		for(int i=0; i<sys[n]->Length; i++){
+#Modifier.cpp#:			tempsys[n]->Vel[i].set(0,0,0);
+#Modifier.cpp#:				for(int j=0; j<sys[m]->Length; j++){
+#Modifier.cpp#:						tempsys[n]->Vel[i] += 0.3*sys[m]->Vel[j];
+#Modifier.cpp#:					dif = sys[m]->Loc[j] - sys[n]->Loc[i];
+#Modifier.cpp#:					mirdif.setZ(sys[m]->Loc[j].zcomp() + sys[n]->Loc[i].zcomp());
+#Modifier.cpp#:					h = sys[n]->Loc[i].zcomp();
+#Modifier.cpp#:					//hminusz = h - mirdif.zcomp();
+#Modifier.cpp#:						hardcore = (1.0 - 1.0/(normsq*normsq*16.0))*dif;//tempsys[n]->Vel[i] += (1.0 - 1.0/(normsq*normsq*16.0))*dif;
+#Modifier.cpp#:						tempsys[n]->Vel[i] += (sys[m]->Vel[j] + hardcore + (dif * (dif*(sys[m]->Vel[j]+hardcore)))*(1.0/normsq) )*(k/norm);
+#Modifier.cpp#:						tempsys[n]->Vel[i] += sys[m]->Vel[j];//+hardcore;
+#Modifier.cpp#:						mirVel = sys[m]->Vel[j]+hardcore;
+#Modifier.cpp#:						mirVel.setZ(-mirVel.zcomp());
+#Modifier.cpp#:						tempsys[n]->Vel[i] += ( -1.0*(sys[m]->Vel[j]+hardcore +(mirdif * (mirdif*(sys[m]->Vel[j]+hardcore)))*(1.0/mirnormsq) ) //reflected oseen
+#Modifier.cpp#:													- (sys[n]->Loc[i].zcomp())*mirVel //mirrored force direction
+#Modifier.cpp#:													+ (3*mVeldotmDif*sys[n]->Loc[i].zcomp()/mirnormsq - mirVel.zcomp())*mirdif //mirrored position direction
+#Modifier.cpp#:			for(int j=0;j<yolk->Length;j++){
+#Modifier.cpp#:					dif = sys[n]->Loc[i] - yolk->Loc[j];
+#Modifier.cpp#:					mirdif.setZ(sys[n]->Loc[i].zcomp() + yolk->Loc[j].zcomp());
+#Modifier.cpp#:					h = yolk->Loc[j].zcomp();
+#Modifier.cpp#:						hardcore = (1.0 - 1.0/(normsq*normsq*16.0))*dif;//tempsys[n]->Vel[i] += (1.0 - 1.0/(normsq*normsq*16.0))*dif;
+#Modifier.cpp#:					yolk->Vel[j] += (sys[n]->Vel[i] + hardcore + (dif * (dif*(sys[n]->Vel[i]+hardcore)))*(1.0/normsq) )*(k/norm);
+#Modifier.cpp#:					mirVel = sys[n]->Vel[i]+hardcore;
+#Modifier.cpp#:					mirVel.setZ(-mirVel.zcomp());
+#Modifier.cpp#:					yolk->Vel[j] += ( -1.0*(sys[n]->Vel[i]+hardcore +(mirdif * (mirdif*(sys[n]->Vel[i]+hardcore)))*(1.0/mirnormsq) ) //reflected oseen
+#Modifier.cpp#:												- (yolk->Loc[j].zcomp())*mirVel //mirrored force direction
+#Modifier.cpp#:												+ (3*mVeldotmDif*yolk->Loc[j].zcomp()/mirnormsq - mirVel.zcomp())*mirdif //mirrored position direction
+#Modifier.cpp#:		for(int i=0; i<sys[n]->Length; i++){
+#Modifier.cpp#:			sys[n]->Vel[i] = tempsys[n]->Vel[i];
+vertgen.py:	    double diff = r(chain_num,mon_num,k)-r(i,j,k);
+vertgen.py:   R = sqrt(sum((r[i,:]-r[i-1,:])**2))
+vertgen.py:   e = (R-linksize)**2
+vertgen.py:   if i < l-1:
+vertgen.py:      R = sqrt(sum((r[i,:]-r[i+1,:])**2))
+vertgen.py:      e += (R-linksize)**2
+vertgen.py:          arclength += sqrt(sum((r[n,i,:]-r[n,i-1,:])**2))
+vertgen.py:   return arclength/(N*(l-1))
+vertgen.py:   if i < l-2:
+vertgen.py:      e += sum((r[i+2,:]-r[i,:])**2)
+vertgen.py:      e += sum((r[i-2,:]-r[i,:])**2)
+vertgen.py:   return -stiffk*e
+vertgen.py:           temp = step*(np.random.rand(3) - half)
+vertgen.py:           dE = -(springE(r[n,:,:],i,l) + stiffE(r[n,:,:],i,l))
+vertgen.py:           if np.random.rand() > exp(-beta*dE):
+vertgen.py:fname += 'ws-'+str(l)+'-'+str(nx*ny)+'-'+str(h)+'-'+ str(sim.settings.shiftk) +'-'+str(sim.settings.stiffk)+'.sim'
+vertgen.py:        #        temp = np.random.rand(3) - np.array([.5,.5,.3])
+jsonify.py:		output.seek(-1,os.SEEK_CUR)
+jsonify.py:	output.seek(-1,os.SEEK_CUR)
+jsonify.py:	output.seek(-1,os.SEEK_CUR)
+jsonify.py:output.seek(-1,os.SEEK_CUR)
+Binary file polysim_pb2.pyc matches
+cpp/polysim.pb.cc:    ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
+cpp/polysim.pb.cc:  SPolymer_descriptor_ = file->message_type(0);
+cpp/polysim.pb.cc:      -1,
+cpp/polysim.pb.cc:  SSystem_descriptor_ = file->message_type(1);
+cpp/polysim.pb.cc:      -1,
+cpp/polysim.pb.cc:  SSim_descriptor_ = file->message_type(2);
+cpp/polysim.pb.cc:      -1,
+cpp/polysim.pb.cc:  Settings_descriptor_ = file->message_type(3);
+cpp/polysim.pb.cc:      -1,
+cpp/polysim.pb.cc:  SPolymer::default_instance_->InitAsDefaultInstance();
+cpp/polysim.pb.cc:  SSystem::default_instance_->InitAsDefaultInstance();
+cpp/polysim.pb.cc:  SSim::default_instance_->InitAsDefaultInstance();
+cpp/polysim.pb.cc:  Settings::default_instance_->InitAsDefaultInstance();
+cpp/polysim.pb.cc:  mutable_unknown_fields()->Clear();
+cpp/polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+cpp/polysim.pb.cc:                 1, 9, input, this->mutable_x())));
+cpp/polysim.pb.cc:                 input, this->mutable_x())));
+cpp/polysim.pb.cc:        if (input->ExpectTag(9)) goto parse_x;
+cpp/polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_y;
+cpp/polysim.pb.cc:                 1, 17, input, this->mutable_y())));
+cpp/polysim.pb.cc:                 input, this->mutable_y())));
+cpp/polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_y;
+cpp/polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_z;
+cpp/polysim.pb.cc:                 1, 25, input, this->mutable_z())));
+cpp/polysim.pb.cc:                 input, this->mutable_z())));
+cpp/polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_z;
+cpp/polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+cpp/polysim.pb.cc:  for (int i = 0; i < this->x_size(); i++) {
+cpp/polysim.pb.cc:      1, this->x(i), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->y_size(); i++) {
+cpp/polysim.pb.cc:      2, this->y(i), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->z_size(); i++) {
+cpp/polysim.pb.cc:      3, this->z(i), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->x_size(); i++) {
+cpp/polysim.pb.cc:      WriteDoubleToArray(1, this->x(i), target);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->y_size(); i++) {
+cpp/polysim.pb.cc:      WriteDoubleToArray(2, this->y(i), target);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->z_size(); i++) {
+cpp/polysim.pb.cc:      WriteDoubleToArray(3, this->z(i), target);
+cpp/polysim.pb.cc:    data_size = 8 * this->x_size();
+cpp/polysim.pb.cc:    total_size += 1 * this->x_size() + data_size;
+cpp/polysim.pb.cc:    data_size = 8 * this->y_size();
+cpp/polysim.pb.cc:    total_size += 1 * this->y_size() + data_size;
+cpp/polysim.pb.cc:    data_size = 8 * this->z_size();
+cpp/polysim.pb.cc:    total_size += 1 * this->z_size() + data_size;
+cpp/polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+cpp/polysim.pb.cc:    x_.Swap(&other->x_);
+cpp/polysim.pb.cc:    y_.Swap(&other->y_);
+cpp/polysim.pb.cc:    z_.Swap(&other->z_);
+cpp/polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+cpp/polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+cpp/polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+cpp/polysim.pb.cc:  mutable_unknown_fields()->Clear();
+cpp/polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+cpp/polysim.pb.cc:        if (input->ExpectTag(10)) goto parse_poly;
+cpp/polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+cpp/polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+cpp/polysim.pb.cc:      1, this->poly(i), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+cpp/polysim.pb.cc:        1, this->poly(i), target);
+cpp/polysim.pb.cc:  total_size += 1 * this->poly_size();
+cpp/polysim.pb.cc:  for (int i = 0; i < this->poly_size(); i++) {
+cpp/polysim.pb.cc:        this->poly(i));
+cpp/polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+cpp/polysim.pb.cc:    poly_.Swap(&other->poly_);
+cpp/polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+cpp/polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+cpp/polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+cpp/polysim.pb.cc:    if (settings_ != NULL) settings_->::polysim::Settings::Clear();
+cpp/polysim.pb.cc:  mutable_unknown_fields()->Clear();
+cpp/polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+cpp/polysim.pb.cc:        if (input->ExpectTag(10)) goto parse_system;
+cpp/polysim.pb.cc:        if (input->ExpectTag(18)) goto parse_settings;
+cpp/polysim.pb.cc:        if (input->ExpectTag(26)) goto parse_yolk;
+cpp/polysim.pb.cc:        if (input->ExpectTag(26)) goto parse_yolk;
+cpp/polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+cpp/polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+cpp/polysim.pb.cc:      1, this->system(i), output);
+cpp/polysim.pb.cc:      2, this->settings(), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+cpp/polysim.pb.cc:      3, this->yolk(i), output);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+cpp/polysim.pb.cc:        1, this->system(i), target);
+cpp/polysim.pb.cc:        2, this->settings(), target);
+cpp/polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+cpp/polysim.pb.cc:        3, this->yolk(i), target);
+cpp/polysim.pb.cc:          this->settings());
+cpp/polysim.pb.cc:  total_size += 1 * this->system_size();
+cpp/polysim.pb.cc:  for (int i = 0; i < this->system_size(); i++) {
+cpp/polysim.pb.cc:        this->system(i));
+cpp/polysim.pb.cc:  total_size += 1 * this->yolk_size();
+cpp/polysim.pb.cc:  for (int i = 0; i < this->yolk_size(); i++) {
+cpp/polysim.pb.cc:        this->yolk(i));
+cpp/polysim.pb.cc:      mutable_settings()->::polysim::Settings::MergeFrom(from.settings());
+cpp/polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+cpp/polysim.pb.cc:    if (!this->settings().IsInitialized()) return false;
+cpp/polysim.pb.cc:    system_.Swap(&other->system_);
+cpp/polysim.pb.cc:    yolk_.Swap(&other->yolk_);
+cpp/polysim.pb.cc:    std::swap(settings_, other->settings_);
+cpp/polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+cpp/polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+cpp/polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+cpp/polysim.pb.cc:  &reinterpret_cast<Settings*>(16)->f) - \
+cpp/polysim.pb.cc:    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+cpp/polysim.pb.cc:  mutable_unknown_fields()->Clear();
+cpp/polysim.pb.cc:    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+cpp/polysim.pb.cc:        if (input->ExpectTag(17)) goto parse_pk;
+cpp/polysim.pb.cc:        if (input->ExpectTag(25)) goto parse_stiffk;
+cpp/polysim.pb.cc:        if (input->ExpectTag(33)) goto parse_shiftk;
+cpp/polysim.pb.cc:        if (input->ExpectTag(41)) goto parse_oseenk;
+cpp/polysim.pb.cc:        if (input->ExpectTag(49)) goto parse_basek;
+cpp/polysim.pb.cc:        if (input->ExpectTag(56)) goto parse_numpin;
+cpp/polysim.pb.cc:        if (input->ExpectTag(65)) goto parse_h;
+cpp/polysim.pb.cc:        if (input->ExpectAtEnd()) goto success;
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->sk(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->pk(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->stiffk(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->shiftk(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->oseenk(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(6, this->basek(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->numpin(), output);
+cpp/polysim.pb.cc:    ::google::protobuf::internal::WireFormatLite::WriteDouble(8, this->h(), output);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->sk(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->pk(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->stiffk(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->shiftk(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->oseenk(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(6, this->basek(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->numpin(), target);
+cpp/polysim.pb.cc:    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(8, this->h(), target);
+cpp/polysim.pb.cc:          this->numpin());
+cpp/polysim.pb.cc:  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+cpp/polysim.pb.cc:    std::swap(h_, other->h_);
+cpp/polysim.pb.cc:    std::swap(sk_, other->sk_);
+cpp/polysim.pb.cc:    std::swap(pk_, other->pk_);
+cpp/polysim.pb.cc:    std::swap(stiffk_, other->stiffk_);
+cpp/polysim.pb.cc:    std::swap(shiftk_, other->shiftk_);
+cpp/polysim.pb.cc:    std::swap(oseenk_, other->oseenk_);
+cpp/polysim.pb.cc:    std::swap(basek_, other->basek_);
+cpp/polysim.pb.cc:    std::swap(numpin_, other->numpin_);
+cpp/polysim.pb.cc:    std::swap(_has_bits_[0], other->_has_bits_[0]);
+cpp/polysim.pb.cc:    _unknown_fields_.Swap(&other->_unknown_fields_);
+cpp/polysim.pb.cc:    std::swap(_cached_size_, other->_cached_size_);
+cpp/polysim.pb.h:// Internal implementation detail -- do not call these.
+cpp/polysim.pb.h:  // implements Message ----------------------------------------------
+cpp/polysim.pb.h:  // nested types ----------------------------------------------------
+cpp/polysim.pb.h:  // accessors -------------------------------------------------------
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+cpp/polysim.pb.h:  // implements Message ----------------------------------------------
+cpp/polysim.pb.h:  // nested types ----------------------------------------------------
+cpp/polysim.pb.h:  // accessors -------------------------------------------------------
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+cpp/polysim.pb.h:  // implements Message ----------------------------------------------
+cpp/polysim.pb.h:  // nested types ----------------------------------------------------
+cpp/polysim.pb.h:  // accessors -------------------------------------------------------
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+cpp/polysim.pb.h:  // implements Message ----------------------------------------------
+cpp/polysim.pb.h:  // nested types ----------------------------------------------------
+cpp/polysim.pb.h:  // accessors -------------------------------------------------------
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+cpp/polysim.pb.h:  if (settings_ != NULL) settings_->::polysim::Settings::Clear();
+cpp/polysim.pb.h:  return settings_ != NULL ? *settings_ : *default_instance_->settings_;
+cpp/polysim.pb.h:// -------------------------------------------------------------------
+1d_corr.py~:max_x = -sys.maxint - 1
+1d_corr.py~:    scaled_time = frame_num-t_start
+1d_corr.py~:            x = int(poly.x[-1]/ds)
+1d_corr.py~:            y = int(poly.y[-1]/ds)
+1d_corr.py~:nx = max_x - min_x + 1
+1d_corr.py~:ny = max_y - min_y + 1
+1d_corr.py~:    x = pos_list[i][1] - min_x
+1d_corr.py~:    y = pos_list[i][2] - min_y
+1d_corr.py~:#dens -= dens_ave
+1d_corr.py~:#Zero-pad density function
+1d_corr.py~:savename =  name[:-4]+'_'+str(ds)
+vertgen.py~:	    double diff = r(chain_num,mon_num,k)-r(i,j,k);
+vertgen.py~:   R = sqrt(sum((r[i,:]-r[i-1,:])**2))
+vertgen.py~:   e = (R-linksize)**2
+vertgen.py~:   if i < l-1:
+vertgen.py~:      R = sqrt(sum((r[i,:]-r[i+1,:])**2))
+vertgen.py~:      e += (R-linksize)**2
+vertgen.py~:          arclength += sqrt(sum((r[n,i,:]-r[n,i-1,:])**2))
+vertgen.py~:   return arclength/(N*(l-1))
+vertgen.py~:   if i < l-2:
+vertgen.py~:      e += sum((r[i+2,:]-r[i,:])**2)
+vertgen.py~:      e += sum((r[i-2,:]-r[i,:])**2)
+vertgen.py~:   return -stiffk*e
+vertgen.py~:           temp = step*(np.random.rand(3) - half)
+vertgen.py~:           dE = -(springE(r[n,:,:],i,l) + stiffE(r[n,:,:],i,l))
+vertgen.py~:           if np.random.rand() > exp(-beta*dE):
+vertgen.py~:fname += 'ws-'+str(l)+'-'+str(nx*ny)+'-'+str(h)+'-'+ str(sim.settings.shiftk) +'-'+str(sim.settings.stiffk)+'.sim'
+vertgen.py~:                temp = np.random.rand(3) - np.array([.5,.5,.3])
+readout.py:	for n in range(len(poly.x)-1):
+readout.py:			for m in range(len(poly2.x)-1):
+readout.py:				sum += (poly.x[n+1]-poly.x[n])*(poly.x[n+1]-poly.x[n])
+readout.py:				sum += (poly.y[n+1]-poly.y[n])*(poly.y[n+1]-poly.y[n])
+readout.py:				sum += (poly.z[n+1]-poly.z[n])*(poly.z[n+1]-poly.z[n])
+singlegen.py:                temp = np.random.rand(3) - np.array([.5,.5,.2])
+Modifier.cpp:	this->pk = initpk;
+Modifier.cpp:	this->sk = initsk;
+Modifier.cpp:	this->stiffk = initstiffk;
+Modifier.cpp:	this->linksize = 1.0;
+Modifier.cpp:	this->numpin = numpin;
+Modifier.cpp:			pins.push_back(sys[i]->Loc[j]);
+Modifier.cpp:		for(int j=1; j<sys[i]->Length-1; j++){
+Modifier.cpp:			f1 = sys[i]->Loc[j-1] - sys[i]->Loc[j];
+Modifier.cpp:			f2 = sys[i]->Loc[j+1] - sys[i]->Loc[j];
+Modifier.cpp:			sys[i]->Vel[j] += ((mag1-linksize)*sk/mag1)*f1 + ((mag2-linksize)*sk/mag2)*f2;
+Modifier.cpp:		f1 = sys[i]->Loc[1] - sys[i]->Loc[0];
+Modifier.cpp:		f2 = sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-1];
+Modifier.cpp:		sys[i]->Vel[0] += ((mag1-linksize)*sk/mag1)*f1;
+Modifier.cpp:		sys[i]->Vel[sys[i]->Length-1] += ((mag2-linksize)*sk/mag2)*f2;
+Modifier.cpp:		for(int j=2; j<sys[i]->Length-2; j++){
+Modifier.cpp:			sys[i]->Vel[j] += (sys[i]->Loc[j]*2.0 - sys[i]->Loc[j+2] - sys[i]->Loc[j-2])*stiffk;
+Modifier.cpp:		sys[i]->Vel[1] += (sys[i]->Loc[1] - sys[i]->Loc[3])*stiffk;
+Modifier.cpp:		sys[i]->Vel[0] += (sys[i]->Loc[0] - sys[i]->Loc[2])*stiffk;
+Modifier.cpp:		sys[i]->Vel[sys[i]->Length-2] += (sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-4])*stiffk;
+Modifier.cpp:		sys[i]->Vel[sys[i]->Length-1] += (sys[i]->Loc[sys[i]->Length-1] - sys[i]->Loc[sys[i]->Length-3])*stiffk;
+Modifier.cpp:			sys[i]->Vel[j] += (pins[i*numpin + j] - sys[i]->Loc[j])*pk;
+Modifier.cpp:		//cout << sys[i]->Loc[0]<<endl;
+Modifier.cpp:		//sys[i]->Vel[1] += (vect_d(0.0,0.0,1.0) - f1/mag1)*3.0;//sloppily at first
+Modifier.cpp:		sys[i]->Vel[1] += -basek*(f1 - vect_d(0.0,0.0,f1.zcomp())); 
+Modifier.cpp:		for(int j=1; j<sys[i]->Length; j++){
+Modifier.cpp:			if(sys[i]->Loc[j].zcomp() < .5){
+Modifier.cpp:				sys[i]->Vel[j] += (-100.0 + 100.0/(sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*sys[i]->Loc[j].zcomp()*16.0))*z_hat;
+Modifier.cpp:				if(sys[i]->Loc[j].zcomp() < 0){
+Modifier.cpp:					cout<<"warning!!!, wall broken!! " << "index:" << i <<"-"<< j << " "<< sys[i]->Loc[j].zcomp() <<endl;
+Modifier.cpp:	this->k = ck;
+Modifier.cpp:		for(int j=1; j<sys[i]->Length-1; j++){
+Modifier.cpp:			sys[i]->Vel[j] += (sys[i]->Loc[j-1] - sys[i]->Loc[j+1])*k;
+Modifier.cpp:		sys[i]->Vel[0] += (sys[i]->Loc[0] - sys[i]->Loc[1])*k;
+Modifier.cpp:		sys[i]->Vel[sys[i]->Length-1] += (sys[i]->Loc[sys[i]->Length-2] - sys[i]->Loc[sys[i]->Length-1])*k;
+Modifier.cpp:	this->k = ck;
+Modifier.cpp:		tempsys.push_back(new Polymer(csys[i]->Length));
+Modifier.cpp:		for(int i=0; i<sys[n]->Length; i++){
+Modifier.cpp:			tempsys[n]->Vel[i].set(0,0,0);
+Modifier.cpp:				for(int j=0; j<sys[m]->Length; j++){
+Modifier.cpp:						tempsys[n]->Vel[i] += 0.3*sys[m]->Vel[j];
+Modifier.cpp:					dif = sys[m]->Loc[j] - sys[n]->Loc[i];
+Modifier.cpp:					mirdif.setZ(sys[m]->Loc[j].zcomp() + sys[n]->Loc[i].zcomp());
+Modifier.cpp:					h = sys[n]->Loc[i].zcomp();
+Modifier.cpp:					//hminusz = h - mirdif.zcomp();
+Modifier.cpp:						hardcore = (1.0 - 1.0/(normsq*normsq*16.0))*dif;//tempsys[n]->Vel[i] += (1.0 - 1.0/(normsq*normsq*16.0))*dif;
+Modifier.cpp:						tempsys[n]->Vel[i] += (sys[m]->Vel[j] + hardcore + (dif * (dif*(sys[m]->Vel[j]+hardcore)))*(1.0/normsq) )*(k/norm);
+Modifier.cpp:						tempsys[n]->Vel[i] += sys[m]->Vel[j];//+hardcore;
+Modifier.cpp:						mirVel = sys[m]->Vel[j]+hardcore;
+Modifier.cpp:						mirVel.setZ(-mirVel.zcomp());
+Modifier.cpp:						tempsys[n]->Vel[i] += ( -1.0*(sys[m]->Vel[j]+hardcore +(mirdif * (mirdif*(sys[m]->Vel[j]+hardcore)))*(1.0/mirnormsq) ) //reflected oseen
+Modifier.cpp:													- (sys[n]->Loc[i].zcomp())*mirVel //mirrored force direction
+Modifier.cpp:													+ (3*mVeldotmDif*sys[n]->Loc[i].zcomp()/mirnormsq - mirVel.zcomp())*mirdif //mirrored position direction
+Modifier.cpp:			for(int j=0;j<yolk->Length;j++){
+Modifier.cpp:					dif = sys[n]->Loc[i] - yolk->Loc[j];
+Modifier.cpp:					mirdif.setZ(sys[n]->Loc[i].zcomp() + yolk->Loc[j].zcomp());
+Modifier.cpp:					h = yolk->Loc[j].zcomp();
+Modifier.cpp:						hardcore = (1.0 - 1.0/(normsq*normsq*16.0))*dif;//tempsys[n]->Vel[i] += (1.0 - 1.0/(normsq*normsq*16.0))*dif;
+Modifier.cpp:					yolk->Vel[j] += (sys[n]->Vel[i] + hardcore + (dif * (dif*(sys[n]->Vel[i]+hardcore)))*(1.0/normsq) )*(k/norm);
+Modifier.cpp:					mirVel = sys[n]->Vel[i]+hardcore;
+Modifier.cpp:					mirVel.setZ(-mirVel.zcomp());
+Modifier.cpp:					yolk->Vel[j] += ( -1.0*(sys[n]->Vel[i]+hardcore +(mirdif * (mirdif*(sys[n]->Vel[i]+hardcore)))*(1.0/mirnormsq) ) //reflected oseen
+Modifier.cpp:												- (yolk->Loc[j].zcomp())*mirVel //mirrored force direction
+Modifier.cpp:												+ (3*mVeldotmDif*yolk->Loc[j].zcomp()/mirnormsq - mirVel.zcomp())*mirdif //mirrored position direction
+Modifier.cpp:		for(int i=0; i<sys[n]->Length; i++){
+Modifier.cpp:			sys[n]->Vel[i] = tempsys[n]->Vel[i];
+polygen.py:            temp = np.random.rand(3) - np.array([.5,.5,0])
+makefile:DEBUG = -g
+makefile:LIBS = protobuf protobuf-lite protoc
+makefile:CFLAGS = -Wall -c -O3 -static `pkg-config --cflags --libs protobuf`
+makefile:LFLAGS = -Wall -O3 -static `pkg-config --cflags --libs protobuf`
+makefile:	pkg-config --cflags protobuf
+makefile:	$(CC) $(LFLAGS) $(OBJS) -o polysim `pkg-config --cflags --libs protobuf`
+makefile:	pkg-config --cflags protobuf
+makefile:	$(CC) $(CFLAGS) polysim.pb.cc `pkg-config --cflags --libs protobuf`
+main.cpp~:	//for(int i=0; i< poly->Length; i++){
+main.cpp~:	//	cout << poly->Loc[i];
+main.cpp~:	//outfile.write((const char*)&poly->Length, sizeof(poly->Length));
+main.cpp~:	//outfile.write((const char*)&poly->Loc[0], poly->Length * sizeof(vect_d));
+main.cpp~:	//ifile.read((char*)&poly2->Loc[0], size* sizeof(vect_d));
+main.cpp~:	//for(int i=0; i< poly2->Length; i++){
+main.cpp~:	//	cout << poly2->Loc[i];
+main.cpp~:		return -1;
+main.cpp~://	std::tr1::uniform_real<double> dist(-.5,.5);
+main.cpp~:				sim->addPolymer(2*j,2*i,1,20,100*i+j);
+main.cpp~:	sim->initSys();
+main.cpp~:	sim->sol->SetStepSize(.003);
+main.cpp~:	cout << "Going for " << numsteps << " steps(" << start_step << "-"<<start_step+numsteps<<")"<< endl;
+main.cpp~:		sim->takeSteps(200);
+main.cpp~:		//outputPolys(sim->sys, output);
+main.cpp~:		savePolys(sim->sys, saveSim.add_system());
+main.cpp~:		saveYolk(sim->yolk, saveSim.add_yolk());
+main.cpp~:			return -1;
+main.cpp~:	//output.seekp(-1,ios::cur);
+main.cpp~:		for(int j=0; j< sys[i]->Length; j++){
+main.cpp~:			file << sys[i]->Loc[j];
+main.cpp~:		file.seekp(-1,ios::cur);
+main.cpp~:	file.seekp(-1,ios::cur);
+main.cpp~:		polysim::SPolymer * poly = save->add_poly();
+main.cpp~:		for(int j=0; j< sys[i]->Length; j++){
+main.cpp~:			poly->add_x(sys[i]->Loc[j].xcomp() );
+main.cpp~:			poly->add_y(sys[i]->Loc[j].ycomp() );
+main.cpp~:			poly->add_z(sys[i]->Loc[j].zcomp() );
+main.cpp~:	for( int  i=0; i<yolk->Length ; i++){
+main.cpp~:		syolk->add_x(yolk->Loc[i].xcomp());
+main.cpp~:		syolk->add_y(yolk->Loc[i].ycomp());
+main.cpp~:		syolk->add_z(yolk->Loc[i].zcomp());
+main.cpp~:	const polysim::SSystem savesys = save.system(save.system_size()-1);
+main.cpp~:	sim->sk = save.settings().sk();
+main.cpp~:	sim->pk = save.settings().pk();
+main.cpp~:	sim->stiffk = save.settings().stiffk();
+main.cpp~:	sim->oseenk = save.settings().oseenk();
+main.cpp~:	sim->shiftk = save.settings().shiftk();
+main.cpp~:	sim->basek = save.settings().basek();
+main.cpp~:	sim->numpin = save.settings().numpin();
+main.cpp~:			poly->pushMonomer(savepoly.x(j),savepoly.y(j),savepoly.z(j));
+main.cpp~:		sim->addPolymer(poly);
+main.cpp~:	const polysim::SPolymer saveyolk = save.yolk(save.yolk_size()-1);
+main.cpp~:	sim->yolk = new Polymer(0);
+main.cpp~:		sim->yolk->pushMonomer(saveyolk.x(i),saveyolk.y(i),saveyolk.z(i));
+display_ends.py~:       for i in range(nm-1,nm):
+display_ends.py~:		       cyls[pol_num][i].axis = r_old-r
+Binary file Sim.o matches
+stdint.h:   02111-1307 USA.  */
+stdint.h:# define INT8_MIN		(-128)
+stdint.h:# define INT16_MIN		(-32767-1)
+stdint.h:# define INT32_MIN		(-2147483647-1)
+stdint.h:# define INT64_MIN		(-__INT64_C(9223372036854775807)-1)
+stdint.h:# define INT_LEAST8_MIN		(-128)
+stdint.h:# define INT_LEAST16_MIN	(-32767-1)
+stdint.h:# define INT_LEAST32_MIN	(-2147483647-1)
+stdint.h:# define INT_LEAST64_MIN	(-__INT64_C(9223372036854775807)-1)
+stdint.h:# define INT_FAST8_MIN		(-128)
+stdint.h:#  define INT_FAST16_MIN	(-9223372036854775807L-1)
+stdint.h:#  define INT_FAST32_MIN	(-9223372036854775807L-1)
+stdint.h:#  define INT_FAST16_MIN	(-2147483647-1)
+stdint.h:#  define INT_FAST32_MIN	(-2147483647-1)
+stdint.h:# define INT_FAST64_MIN		(-__INT64_C(9223372036854775807)-1)
+stdint.h:#  define INTPTR_MIN		(-9223372036854775807L-1)
+stdint.h:#  define INTPTR_MIN		(-2147483647-1)
+stdint.h:# define INTMAX_MIN		(-__INT64_C(9223372036854775807)-1)
+stdint.h:#  define PTRDIFF_MIN		(-9223372036854775807L-1)
+stdint.h:#  define PTRDIFF_MIN		(-2147483647-1)
+stdint.h:# define SIG_ATOMIC_MIN		(-2147483647-1)
+Binary file 012417/ws-16-16-1.0-0.2-3.sim matches
+Sim.cpp:	sol->initSys(sys,yolk,pk,sk,stiffk,oseenk,shiftk,numpin);
+Sim.cpp:	return sol->TakeSteps(steps);
+Binary file test/ws-16-100-2.0-0.05.sim matches
+polysim.pb.h:// Internal implementation detail -- do not call these.
+polysim.pb.h:  // implements Message ----------------------------------------------
+polysim.pb.h:  // nested types ----------------------------------------------------
+polysim.pb.h:  // accessors -------------------------------------------------------
+polysim.pb.h:// -------------------------------------------------------------------
+polysim.pb.h:  // implements Message ----------------------------------------------
+polysim.pb.h:  // nested types ----------------------------------------------------
+polysim.pb.h:  // accessors -------------------------------------------------------
+polysim.pb.h:// -------------------------------------------------------------------
+polysim.pb.h:  // implements Message ----------------------------------------------
+polysim.pb.h:  // nested types ----------------------------------------------------
+polysim.pb.h:  // accessors -------------------------------------------------------
+polysim.pb.h:// -------------------------------------------------------------------
+polysim.pb.h:  // implements Message ----------------------------------------------
+polysim.pb.h:  // nested types ----------------------------------------------------
+polysim.pb.h:  // accessors -------------------------------------------------------
+polysim.pb.h:// -------------------------------------------------------------------
+polysim.pb.h:// -------------------------------------------------------------------
+polysim.pb.h:  if (settings_ != NULL) settings_->::polysim::Settings::Clear();
+polysim.pb.h:  return settings_ != NULL ? *settings_ : *default_instance_->settings_;
+polysim.pb.h:// -------------------------------------------------------------------

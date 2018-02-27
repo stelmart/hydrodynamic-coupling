@@ -1,0 +1,26 @@
+package polysim;
+
+message SPolymer {
+	repeated double x = 1;
+	repeated double y = 2;
+	repeated double z = 3;
+}
+message SSystem {
+	repeated SPolymer poly = 1;
+}
+message SSim {
+	repeated SSystem system = 1;
+    repeated SPolymer yolk = 3;
+    required Settings settings = 2;
+}
+
+message Settings {
+    required double h = 8;
+    required double sk = 1;
+    required double pk = 2;
+    required double stiffk = 3;
+    required double shiftk = 4;
+    required double oseenk = 5;
+    required double basek = 6;
+    required int32 numpin = 7;
+}
